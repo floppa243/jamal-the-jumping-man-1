@@ -108,7 +108,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile26, function (sprite, locatio
         ..............................
         `, [myTiles.transparency16,myTiles.tile2,sprites.dungeon.floorDark2,myTiles.tile16,myTiles.tile21,myTiles.tile22,myTiles.tile17], TileScale.Sixteen))
     scene.setBackgroundColor(7)
-    tiles.placeOnTile(jamal, tiles.getTileLocation(5, 46))
+    tiles.placeOnTile(jamal, tiles.getTileLocation(5, 44))
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile21, function (sprite, location) {
     info.changeLifeBy(-1)
@@ -145,6 +145,8 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile20, function (sprite, locatio
         `, [myTiles.transparency16,myTiles.tile9,myTiles.tile10,myTiles.tile12,myTiles.tile17,myTiles.tile23,myTiles.tile24], TileScale.Sixteen))
     scene.setBackgroundColor(3)
     music.magicWand.play()
+    tiles.placeOnTile(jamal, tiles.getTileLocation(8, 9))
+    game.showLongText("You found my secret level wow", DialogLayout.Bottom)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile5, function (sprite, location) {
     scene.setBackgroundColor(12)
@@ -152,7 +154,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile5, function (sprite, location
         ........................................
         ........................................
         ........................................
-        ..................2..2..................
+        .................222222.................
         ........................................
         ....22222...22222.......................
         ........................................
@@ -282,5 +284,5 @@ forever(function () {
 })
 forever(function () {
     pause(1000)
-    info.changeScoreBy(1)
+    info.changeScoreBy(-1)
 })
