@@ -124,6 +124,9 @@ forever(function () {
     if (jamal.tileKindAt(TileDirection.Bottom, assets.tile`tile2`)) {
         jamal.vy = -300
     }
+    if (jamal.tileKindAt(TileDirection.Bottom, assets.tile`myTile`)) {
+        jamal.vy = -300
+    }
 })
 forever(function () {
     pause(1000)
