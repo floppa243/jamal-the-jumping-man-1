@@ -1,3 +1,7 @@
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile1`, function (sprite, location) {
+    info.changeLifeBy(-1)
+    tiles.placeOnTile(jamal, tiles.getTileLocation(0, 20))
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile21`, function (sprite, location) {
     info.changeLifeBy(-1)
     tiles.placeOnTile(jamal, tiles.getTileLocation(5, 46))
@@ -36,6 +40,12 @@ info.onLifeZero(function () {
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile24`, function (sprite, location) {
     info.changeLifeBy(-100000)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`tile13`, function (sprite, location) {
+    scene.setBackgroundColor(12)
+    tiles.setTilemap(tilemap`level3`)
+    info.changeLifeBy(1)
+    tiles.placeOnTile(jamal, tiles.getTileLocation(0, 20))
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile20`, function (sprite, location) {
     tiles.setTilemap(tilemap`level1`)
@@ -125,6 +135,9 @@ forever(function () {
         jamal.vy = -300
     }
     if (jamal.tileKindAt(TileDirection.Bottom, assets.tile`myTile`)) {
+        jamal.vy = -300
+    }
+    if (jamal.tileKindAt(TileDirection.Bottom, assets.tile`myTile0`)) {
         jamal.vy = -300
     }
 })
