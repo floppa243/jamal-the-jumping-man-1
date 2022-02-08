@@ -26,6 +26,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile5`, function (sprite, loc
     scene.setBackgroundColor(12)
     tiles.setTilemap(tilemap`level3`)
     info.changeLifeBy(1)
+    tiles.placeOnTile(jamal, tiles.getTileLocation(0, 22))
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile6`, function (sprite, location) {
     tiles.placeOnTile(jamal, tiles.getTileLocation(1, 21))
@@ -36,7 +37,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile15`, function (sprite, lo
     tiles.placeOnTile(jamal, tiles.getTileLocation(2, 24))
 })
 info.onLifeZero(function () {
-    game.over(false)
+	
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`tile24`, function (sprite, location) {
     info.changeLifeBy(-100000)
@@ -113,13 +114,13 @@ forever(function () {
     if (jamal.tileKindAt(TileDirection.Bottom, sprites.builtin.forestTiles0)) {
         jamal.vy = -300
     }
-    if (jamal.tileKindAt(TileDirection.Bottom, sprites.dungeon.darkGroundCenter)) {
+    if (jamal.tileKindAt(TileDirection.Bottom, sprites.dungeon.floorDark2)) {
         jamal.vy = -300
     }
-    if (jamal.tileKindAt(TileDirection.Bottom, sprites.dungeon.floorDarkDiamond)) {
+    if (jamal.tileKindAt(TileDirection.Bottom, assets.tile`myTile3`)) {
         jamal.vy = -300
     }
-    if (jamal.tileKindAt(TileDirection.Bottom, sprites.dungeon.stairLarge)) {
+    if (jamal.tileKindAt(TileDirection.Bottom, assets.tile`myTile4`)) {
         jamal.vy = -300
     }
     if (jamal.tileKindAt(TileDirection.Bottom, assets.tile`tile10`)) {
